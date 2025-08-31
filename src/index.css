@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --color-primary: #F0F0F0;
+  --color-secondary: #000000;
+  --color-heading: #2B6DF1;
+  --color-text: #717171;
+  --color-darkText: #FEFEFE;
+  --btn-bg: linear-gradient(157.33deg, #382BF1 18.67%, #3524A0 81.59%);
+}
+.montecarlo {
+  font-family: "MonteCarlo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.great-vibes {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bgGradientAnim{
+  background: linear-gradient(-45deg, #382BF1, #E939FF, #00C9FF, #92FE9D);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.btnGradient{
+  background: var(--btn-bg);
+  color: var(--color-primary);
+  padding: 10px 25px;
+  border-radius: 8px;
+  
+}
+[data-theme="dark"]{
+  background: #0a0129;
+}
+
+ h2,h1,h4, h5,h6 {
+  color: var(--color-heading);
+}
+.link{
+  color: var(--color-heading);
+}
+h3{
+color: var(--color-heading);
+}
+[data-theme="dark"] h3{
+  color: #DED4E4;
+
+}
+.menuLink:hover{
+color:var(--color-heading);
+}
+.myName{
+  font-family: "MonteCarlo", cursive;
+  line-height: 70px;
+  background: linear-gradient(
+    91.1deg,
+    #d800f4 0.94%,
+    #1911ff99 56.3%,
+    #5e027c99 79.79%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;  /* For Firefox */
+  color: transparent;
+
+}
