@@ -31,10 +31,18 @@
   font-style: normal;
 }
 
-.bgGradientAnim{
-  background: linear-gradient(-45deg, #382BF1, #E939FF, #00C9FF, #92FE9D);
+.bgGradientAnim{   
+  background: conic-gradient(
+    from 90deg,
+    
+    #fd8925 25%,
+    #ee4f27 50%,
+    #ff0c00 75%,
+    #ff9b26 100%
+  );
   background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
+  animation: gradientFlow 12s ease infinite;
+  border: 1px solid transparent;
 }
 
 @keyframes gradientFlow {
@@ -52,10 +60,14 @@
 
 .btnGradient{
   background: var(--btn-bg);
-  color: var(--color-primary);
   padding: 10px 25px;
   border-radius: 8px;
   
+}
+.skillTechBG{
+   background: var(--btn-bg);
+  padding: 8px 10px;
+  border-radius: 8px;
 }
 [data-theme="dark"]{
   background: #0a0129;
