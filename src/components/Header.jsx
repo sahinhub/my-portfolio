@@ -80,20 +80,30 @@ const Header = () => {
                                 </svg>
                             )}
                         </button>
-                           
-                            <div className={`z-[999] top-14 right-0 w-full absolute h-[150px] menuBGLight bg-gray-900 transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg`}>
-                            <ul className="px-3 space-x-3 space-y-2">
+
+                        <div className={`z-10 top-14 right-0 w-full absolute h-[220px] transition-all ${isdark ? 'menuBGDark' : 'menuBGLight'} duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg p-3`}>
+                            <ul className="space-x-3 space-y-2 w-full">
                                 {navlinks.map(link => (
-                                <li key={link.path}>
-                                    <Link to={link.path} className="text-lg menuLink">{link.label}</Link>
-                                </li>
+                                    <li
+                                        key={link.path}
+                                        className={`
+                                                ${isdark ? 'hover:bg-blue-950' : 'hover:bg-black hover:text-white'} 
+                                                transition-background duration-500 ease-in-out 
+                                                py-2 px-2 rounded-md cursor-pointer w-full
+                                            `}
+                                    >
+                                        <Link to={link.path} className="text-lg w-full block">
+                                            {link.label}
+                                        </Link>
+                                    </li>
                                 ))}
                             </ul>
-                            </div>
 
-                    
+                        </div>
+
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>

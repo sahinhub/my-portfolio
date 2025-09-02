@@ -196,11 +196,13 @@ h3 {
   color: #DED4E4;
 
 }
-[data-theme="light"] .menuBGLight{
+
+.menuBGLight{
   background: #dadada;
 }
-.menuLink:hover {
-  color: var(--color-heading);
+.menuBGDark{
+  background: #0e013ecb ;
+  box-shadow: 0px 2px 10px #050025;
 }
 
 .headingGradient {
