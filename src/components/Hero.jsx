@@ -1,45 +1,55 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import heroImage from '../assets/sahin.png'
 import { Typewriter } from 'react-simple-typewriter';
 import { BiRightArrow } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import { FaBehance, FaDribbble, FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FaX, FaXTwitter } from 'react-icons/fa6';
+import { Linkedin } from 'lucide-react';
+import { ThemeContext } from '../context/themeContext';
 const Hero = () => {
 
+    const {isdark}=useContext(ThemeContext);
 
     const handleDone = () => {
-        console.log(`Done after 5 loops!`)
+      
     }
     return (
         <div className=''>
 
             <div className=" min-h-[450px] overflow-hidden">
                 <div className="hero-content text-center mx-auto ">
-                    <div className="lg:max-w-2xl w-full flex flex-col justify-center items-center gap-4">
+                    <div className="lg:max-w-3xl w-full flex flex-col justify-center items-center gap-4">
                         <div className='bgGradientAnim rounded-full p-1 w-1/2 lg:max-w-full'><img className='rounded-full w-full' src={heroImage} alt="Sahin Alam" /></div>
-                        <h1 className="text-7xl myName w-2xl">Sahin Alam</h1>
+                        <h1 className="text-7xl myName w-2xl headingGradient">Sahin Alam</h1>
                         <h3 className="max-w-full text-2xl lg:text-3xl font-extrabold font-[montserrat]">
 
                             <Typewriter
-                                words={['Front-End Web Developer', 'Writing clean ,efficient and impactful code', 'Always learning, building and innovating', 'WordPress to Full-Stack Developement', 'Crafting fast and user-friendly web experience']}
-                                loop={'10'}
-                                cursor={true}
-                                cursorStyle='|'
+                                words={[
+                                    'Front-End Web Developer',
+                                    'Writing clean ,efficient and impactful code',
+                                    'Always learning, building and innovating',
+                                    'WordPress to Full-Stack Developement',
+                                    'Crafting fast and user-friendly web experience'
+                                ]}
+                                loop={'_'}
+                                cursor
+                                cursorStyle="|"
                                 typeSpeed={100}
                                 deleteSpeed={50}
                                 delaySpeed={700}
                                 onLoopDone={handleDone}
-                                onType='_'
+                                onType={(count) => console.log(`Typing... word index: ${count}`)} // ✅ function
                             />
 
 
+
                         </h3>
-                        <p className="max-w-full">
+                        <p className="max-w-2xl">
                             Web Designer & Developer specializing in WordPress, now diving into Full Stack Web Development.
                         </p>
-                        <div className='btnGradient'>
-                            <button className="cursor-pointer  text-primary flex justify-center items-center gap-2">View Resume <BsArrowRight></BsArrowRight></button>
+                        <div className={`${isdark&&'btnAnimation'} w-40 h-12 flex justify-center rounded-lg p-[1px]`}>
+                            <button className={`cursor-pointer ${isdark?'btnGradientDark':'btnBg'} w-full rounded-lg text-primary flex justify-center items-center gap-2`}>View Resume <BsArrowRight></BsArrowRight></button>
                         </div>
 
                         {/* Social Icon */}
@@ -51,7 +61,7 @@ const Hero = () => {
                                 rel="noopener noreferrer"
                                 className="hover:text-[#0A66C2] transition"
                             >
-                                <FaLinkedinIn />
+                                <Linkedin strokeWidth={1.5} />
                             </a>
                             <a
                                 href="https://twitter.com/sahincoder"
@@ -59,7 +69,7 @@ const Hero = () => {
                                 rel="noopener noreferrer"
                                 className="hover:text-[#1DA1F2] transition"
                             >
-                                <FaXTwitter />
+                                <FaXTwitter className='text-2xl' />
                             </a>
                             <a
                                 href="https://behance.net/sahincoder"

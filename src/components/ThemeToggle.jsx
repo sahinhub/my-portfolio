@@ -1,25 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { IoMoon, IoSunny } from 'react-icons/io5';
+import { ThemeContext } from '../context/themeContext';
 
 const ThemeToggle = () => {
-  // Check if the user has a saved theme preference in localStorage
-  const [isdark, setIsdark] = useState(() => {
-    const savedTheme = localStorage.getItem('isdark');
-    // If a theme is saved, use it; otherwise, default to system preference
-    if (savedTheme !== null) {
-      return JSON.parse(savedTheme);
-    } else {
-      // Use system theme if no saved preference
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-  });
+  const {isdark,setIsdark}=useContext(ThemeContext);
 
-  useEffect(() => {
-    // Store the theme in localStorage and apply it to <html> element
-    localStorage.setItem('isdark', JSON.stringify(isdark));
-    document.documentElement.setAttribute('data-theme', isdark ? 'dark' : 'light');
-  }, [isdark]);
-
+   useEffect(() => {
+      // Store the theme in localStorage and apply it to <html> element
+      localStorage.setItem('isdark', JSON.stringify(isdark));
+      document.documentElement.setAttribute('data-theme', isdark ? 'dark' : 'light');
+    }, [isdark]);
   return (
     <div>
       <label className="swap swap-rotate">

@@ -7,18 +7,24 @@
   --color-heading: #2B6DF1;
   --color-text: #717171;
   --color-darkText: #FEFEFE;
-  --btn-bg: linear-gradient(157.33deg, #382BF1 18.67%, #3524A0 81.59%);
-}
+    --bg-color-1: hsla(0, 0%, 100%, 0);
+  --bg-color-2: #1b0bff;
+  --bg-color-3: rgba(55, 27, 236, 0.6);
+  --bg-color-4: #10026c;
+  }
+
 .montecarlo {
   font-family: "MonteCarlo", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
 .poppins {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .great-vibes {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
@@ -27,21 +33,16 @@
 
 .montserrat {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
-.bgGradientAnim{   
-  background: conic-gradient(
-    from 90deg,
+.bgGradientAnim {
+  background: conic-gradient(from 90deg,
     
-    #fd8925 25%,
-    #ee4f27 50%,
-    #ff0c00 75%,
-    #ff9b26 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientFlow 12s ease infinite;
+      var(--bg-color-2),
+      var(--bg-color-4),
+      var(--bg-color-2));
+  background-size: 100% 100%;
+  animation: gradientFlow 5s ease infinite;
   border: 1px solid transparent;
 }
 
@@ -49,58 +50,167 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
+@property --gradient-glow-x {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
 
-.btnGradient{
-  background: var(--btn-bg);
-  padding: 10px 25px;
-  border-radius: 8px;
-  
+@property --bg-color-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
 }
-.skillTechBG{
-   background: var(--btn-bg);
-  padding: 8px 10px;
+
+@property --gradient-glow-y {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: false;
+}
+
+@property --bg-color-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --bg-color-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --bg-stop-2 {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
+
+.btnAnimation {
+  position: relative;
+  overflow: hidden;
+  --gradient-glow-x: 100%;
+  --gradient-glow-y: 50%;
+  --bg-stop-1: 100%;
+  --bg-stop-2: 150%;
+  background: radial-gradient(5rem 80% at var(--gradient-glow-x) var(--gradient-glow-y), #d9dbff, var(--bg-color-2) 90%), radial-gradient(5rem 80% at 100% 50%, #fff, var(--bg-color-3) 90%);
+  transition-duration: .45s;
+  transition-property: --gradient-glow-x, --gradient-glow-y, --bg-color-1, --bg-color-2, --bg-stop-1, --bg-stop-2;
+  transition-duration: .45s;
+  transition-property: 100%, 150%, var(--bg-color-2), var(--bg-color-3), 100%, 150%;
+  animation: glowing-animation 3s linear infinite;
+}
+.btnAnimation:hover{
+  background: radial-gradient(5rem 20% at var(--gradient-glow-x) var(--gradient-glow-y), #fff, var(--bg-color-2) 90%), radial-gradient(5rem 70% at 100% 50%, #fff, var(--bg-color-3) 90%);
+}
+
+
+@keyframes glowing-animation {
+  0% {
+    --gradient-glow-x: 100%;
+    --gradient-glow-y: 50%;
+  }
+
+  5% {
+    --gradient-glow-x: 100%;
+    --gradient-glow-y: 100%;
+  }
+
+  20% {
+    --gradient-glow-x: 0%;
+    --gradient-glow-y: 100%;
+  }
+
+  25% {
+    --gradient-glow-x: 0%;
+    --gradient-glow-y: 50%;
+  }
+
+  30% {
+    --gradient-glow-x: 0%;
+    --gradient-glow-y: 0%;
+  }
+
+  45% {
+    --gradient-glow-x: 100%;
+    --gradient-glow-y: 0%;
+  }
+
+  50% {
+    --gradient-glow-x: 100%;
+    --gradient-glow-y: 50%;
+  }
+}
+
+.btnGradientDark {
+  background: linear-gradient(157.33deg, var(--bg-color-2) 18.67%, var(--bg-color-4) 81.59%);
+}
+.btnBg{
+  background: #000000;
+  color: white;
+}
+
+
+.darkSkillTechBG {
+  background: linear-gradient(157.33deg, var(--bg-color-2) 18.67%, var(--bg-color-4) 81.59%);
+  padding: 4px ;
   border-radius: 8px;
 }
-[data-theme="dark"]{
+.skillTechBg{
+  background: black;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+[data-theme="dark"] {
   background: #0a0129;
 }
 
- h2,h1,h4, h5,h6 {
+h2,
+h1,
+h4,
+h5,
+h6 {
   color: var(--color-heading);
 }
-.link{
+
+.link {
   color: var(--color-heading);
 }
-h3{
-color: var(--color-heading);
+
+h3 {
+  color: var(--color-heading);
 }
-[data-theme="dark"] h3{
+
+[data-theme="dark"] h3 {
   color: #DED4E4;
 
 }
-.menuLink:hover{
-color:var(--color-heading);
+
+.menuLink:hover {
+  color: var(--color-heading);
 }
-.myName{
-  font-family: "MonteCarlo", cursive;
-  line-height: 70px;
-  background: linear-gradient(
-    91.1deg,
-    #d800f4 0.94%,
-    #1911ff99 56.3%,
-    #5e027c99 79.79%
-  );
+
+.headingGradient {
+    background-image: linear-gradient(180deg,#ffffff1a,#0003 58%),linear-gradient(140deg,#fff,#7c65a1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;  /* For Firefox */
+  background-clip: text;
   color: transparent;
 
+}
+.myName{
+  background-image: linear-gradient(140deg,var(--bg-color-2),#7905a7);
+   line-height: 70px;
+    font-family: "MonteCarlo", cursive;
 }

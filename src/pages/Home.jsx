@@ -8,13 +8,9 @@ const Home = () => {
        <div className='py-5 container mx-auto'>
             <Hero></Hero>
               <div className="divider">
-                <BsStack style={{
-                color:'var( --color-heading)'
-              }} className='text-6xl'></BsStack> 
+                <BsStack className='text-6xl'></BsStack> 
               
-              <h3 className='font-semibold text-2xl' style={{
-                color:'var( --color-heading)'
-              }}>My Skills</h3></div>
+              <h3 className='headingGradient font-[poppins] font-bold text-3xl lg:text-4xl'>My Skills</h3></div>
 
 
             <div className='mb-5'>
