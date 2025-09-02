@@ -42,7 +42,7 @@ const Header = () => {
                 {/* Right Side */}
                 <div className="navbar-end flex-1/2 lg:flex-1/3 space-x-4">
                     <ThemeToggle />
-                    <div className={`${isdark && 'btnAnimation'} p-[1px] rounded-lg`}>
+                    <div className={` hidden lg:block ${isdark && 'btnAnimation'} p-[1px] rounded-lg`}>
                         <button
                             onClick={handleNavigate}
                             className={`${isdark ? 'btnGradientDark' : 'btnBg'}  px-6 py-2 rounded-md dark:text-primary cursor-pointer text-xl`}
