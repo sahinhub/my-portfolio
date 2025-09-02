@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import heroImage from '../assets/sahin.png'
 import { Typewriter } from 'react-simple-typewriter';
-import { BiRightArrow } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import { FaBehance, FaDribbble, FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FaX, FaXTwitter } from 'react-icons/fa6';
@@ -35,9 +34,9 @@ const Hero = () => {
                                 loop={'_'}
                                 cursor
                                 cursorStyle="|"
-                                typeSpeed={100}
+                                typeSpeed={10}
                                 deleteSpeed={50}
-                                delaySpeed={700}
+                                delaySpeed={2500}
                                 onLoopDone={handleDone}
                                 onType={(count) => console.log(`Typing... word index: ${count}`)} // ✅ function
                             />

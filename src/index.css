@@ -196,7 +196,9 @@ h3 {
   color: #DED4E4;
 
 }
-
+[data-theme="light"] .menuBGLight{
+  background: #dadada;
+}
 .menuLink:hover {
   color: var(--color-heading);
 }
