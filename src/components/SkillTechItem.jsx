@@ -6,7 +6,7 @@ const SkillTechItem = ({techItem}) => {
     console.log(isdark);
     const {name,image_url}=techItem;
     return (
-        <div className={`flex gap-1 justify-start items-center ${isdark? 'darkSkillTechBG ':' skillTechBg'}`}>
+        <div className={`flex justify-start items-center ${isdark? 'darkSkillTechBG ':' skillTechBg'}`}>
             <img className='w-10 h-auto' src={image_url} alt={name} />
             <p className='text-amber-50 text-lg'>{name}</p>
         </div>
