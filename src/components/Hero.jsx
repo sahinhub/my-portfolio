@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import heroImage from '../assets/sahin.png'
 import { Typewriter } from 'react-simple-typewriter';
-import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowDown, BsArrowRight, BsDownload } from 'react-icons/bs';
 import { FaBehance, FaDribbble, FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FaX, FaXTwitter } from 'react-icons/fa6';
 import { Linkedin } from 'lucide-react';
@@ -19,9 +19,9 @@ const Hero = () => {
             <div className=" min-h-[450px] overflow-hidden">
                 <div className="hero-content text-center mx-auto ">
                     <div className="lg:max-w-3xl w-full flex flex-col justify-center items-center gap-4">
-                        <div className='bgGradientAnim rounded-full p-1 w-1/2 lg:max-w-full'><img className='rounded-full w-full' src={heroImage} alt="Sahin Alam" /></div>
+                        <div className={`${isdark?'bgGradientAnim':'bgGradientAnimLight'} rounded-full p-[2px] w-1/2 lg:max-w-full`}><img className='rounded-full w-full' src={heroImage} alt="Sahin Alam" /></div>
                         <h1 className="text-7xl myName w-2xl headingGradient">Sahin Alam</h1>
-                        <h3 className="max-w-full text-2xl lg:text-3xl font-extrabold font-[montserrat]">
+                        <h3 className={`${isdark && 'headingGradient'} max-w-full text-2xl lg:text-3xl font-extrabold font-[montserrat]`}>
 
                             <Typewriter
                                 words={[
@@ -38,8 +38,7 @@ const Hero = () => {
                                 deleteSpeed={50}
                                 delaySpeed={2500}
                                 onLoopDone={handleDone}
-                                onType={(count) => console.log(`Typing... word index: ${count}`)} // ✅ function
-                            />
+                               />
 
 
 
@@ -48,7 +47,7 @@ const Hero = () => {
                             Web Designer & Developer specializing in WordPress, now diving into Full Stack Web Development.
                         </p>
                         <div className={`${isdark&&'btnAnimation'} w-40 h-12 flex justify-center rounded-lg p-[1px]`}>
-                            <button className={`cursor-pointer ${isdark?'btnGradientDark':'btnBg'} w-full rounded-lg text-primary flex justify-center items-center gap-2`}>View Resume <BsArrowRight></BsArrowRight></button>
+                            <button className={`cursor-pointer ${isdark?'btnGradientDark':'btnBg'} w-full rounded-lg text-primary flex justify-center items-center gap-2`}>View Resume <BsDownload></BsDownload></button>
                         </div>
 
                         {/* Social Icon */}

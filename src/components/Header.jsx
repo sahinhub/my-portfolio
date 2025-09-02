@@ -1,15 +1,22 @@
-import { Link, NavLink, useNavigate } from 'react-router';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router'; 
 import ThemeToggle from './ThemeToggle';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react'; 
 import { ThemeContext } from '../context/themeContext';
 
 const Header = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { isdark } = useContext(ThemeContext);
+    const [isOpen, setOpen] = useState(false);
+
+
+    useEffect(() => {
+        setOpen(false);
+    }, [location.pathname]);
+
     const handleNavigate = () => {
         navigate('/contact-me');
     };
-    const { isdark } = useContext(ThemeContext);
-    const [isOpen, setOpen] = useState(false);
 
     const navlinks = [
         { path: '/', label: 'Home' },
@@ -19,28 +26,36 @@ const Header = () => {
     ];
 
     return (
-        <div className="container mx-auto ">
-            <div className="navbar relative">
+        <div className="container mx-auto p-1 lg:p-0 ">
+            <div className="navbar relative px-0 lg:p-2">
                 {/* Logo */}
-                <div className="navbar-start flex-1/3">
+                <div className="navbar-start flex-1/6">
                     <NavLink to="/" className="text-xl">
                         <img className="w-10" src="https://i.postimg.cc/DymWhPxY/logo.png" alt="Sahin" />
                     </NavLink>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="navbar-center hidden lg:flex flex-1/3 ">
-                    <ul className="menu-horizontal px-3 space-x-8 transition-all">
+                <div className="navbar-center hidden justify-center items-center text-center lg:flex flex-3/6 ">
+                    <ul className="menu-horizontal px-4 space-x-5 transition-all">
                         {navlinks.map(link => (
                             <li key={link.path}>
-                                <Link to={link.path} className="text-lg menuLink">{link.label}</Link>
+                                <NavLink
+                                    to={link.path}
+                                    className={ `
+                                    text-lg menuLink
+                                    `}
+                                >
+                                    {link.label}
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
+
                 </div>
 
                 {/* Right Side */}
-                <div className="navbar-end flex-1/2 lg:flex-1/3 space-x-4">
+                <div className="navbar-end flex-1/2 lg:flex-1/6 space-x-4">
                     <ThemeToggle />
                     <div className={` hidden lg:block ${isdark && 'btnAnimation'} p-[1px] rounded-lg`}>
                         <button
@@ -55,7 +70,7 @@ const Header = () => {
                     <div className="lg:hidden overflow-hidden">
                         <button
                             onClick={() => setOpen(!isOpen)}
-                            className="btn btn-rounded cursor-pointer "
+                            className="border border-[#b6b6b632] bg-transparent p-1 btn rounded-lg cursor-pointer "
                         >
                             {/* Hamburger / Close Icons */}
                             {isOpen ? (
@@ -81,16 +96,17 @@ const Header = () => {
                             )}
                         </button>
 
-                        <div className={`z-10 top-14 right-0 w-full absolute h-[220px] transition-all ${isdark ? 'menuBGDark' : 'menuBGLight'} duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg p-3`}>
+                        {/* Mobile Dropdown */}
+                        <div className={`z-10 top-14 right-0 w-full absolute h-[220px] transition-all ${isdark ? 'menuBGDark' : 'menuBGLight'} duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg p-2`}>
                             <ul className="space-x-3 space-y-2 w-full">
                                 {navlinks.map(link => (
                                     <li
                                         key={link.path}
-                                        className={`
-                                                ${isdark ? 'hover:bg-blue-950' : 'hover:bg-black hover:text-white'} 
-                                                transition-background duration-500 ease-in-out 
-                                                py-2 px-2 rounded-md cursor-pointer w-full
-                                            `}
+                                        className={` focus:bg-black
+                                            ${isdark ? 'hover:bg-[#1616ff]' : 'hover:bg-black hover:text-white'} 
+                                            transition-all duration-500 ease-in-out 
+                                            py-2 px-3 rounded-md cursor-pointer w-full
+                                        `}
                                     >
                                         <Link to={link.path} className="text-lg w-full block">
                                             {link.label}
@@ -98,12 +114,8 @@ const Header = () => {
                                     </li>
                                 ))}
                             </ul>
-
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
