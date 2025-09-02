@@ -81,6 +81,14 @@ const Header = () => {
                             )}
                         </button>
 
+                        {
+                            <ul>
+                            {
+                                navlinks
+                            }
+                        </ul>
+                        }
+
                         
                     </div>
                 </div>
