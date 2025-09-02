@@ -22,14 +22,14 @@ const Header = () => {
         <div className="container mx-auto ">
             <div className="navbar relative">
                 {/* Logo */}
-                <div className="navbar-start">
+                <div className="navbar-start flex-1/3">
                     <NavLink to="/" className="text-xl">
                         <img className="w-10" src="https://i.postimg.cc/DymWhPxY/logo.png" alt="Sahin" />
                     </NavLink>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden lg:flex flex-1/3 ">
                     <ul className="menu-horizontal px-3 space-x-8 transition-all">
                         {navlinks.map(link => (
                             <li key={link.path}>
@@ -40,7 +40,7 @@ const Header = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="navbar-end space-x-4">
+                <div className="navbar-end flex-1/2 lg:flex-1/3 space-x-4">
                     <ThemeToggle />
                     <div className={`${isdark && 'btnAnimation'} p-[1px] rounded-lg`}>
                         <button
