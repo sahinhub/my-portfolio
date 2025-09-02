@@ -24,7 +24,7 @@ const Header = () => {
                 {/* Logo */}
                 <div className="navbar-start">
                     <NavLink to="/" className="text-xl">
-                        <img className="w-10" src="/public/logo.svg" alt="Sahin" />
+                        <img className="w-10" src="https://i.postimg.cc/DymWhPxY/logo.png" alt="Sahin" />
                     </NavLink>
                 </div>
 
