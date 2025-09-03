@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { useNavigate, useRouteError } from 'react-router';
+import { ThemeContext } from '../context/themeContext';
 
 
  const ErrorPage = () => {
@@ -9,6 +10,7 @@ import { useNavigate, useRouteError } from 'react-router';
     const handleGoToHome =()=>{
         navigation ('/');
     }
+    const {isdark}=useContext(ThemeContext);
     return (
         
         
@@ -23,7 +25,7 @@ import { useNavigate, useRouteError } from 'react-router';
       </div>
       <div className='flex justify-center items-center'>
         
-       <button className='flex items-center bg-[#D72050] gap-1 rounded-lg px-4 text-white py-3 cursor-pointer' onClick={handleGoToHome}><AiOutlineArrowLeft className=''/>Back to Home</button>
+       <button className={`flex items-center ${isdark?'btnGradientDark':'btnBg'} gap-1 rounded-lg px-4 text-white py-3 cursor-pointer`} onClick={handleGoToHome}><AiOutlineArrowLeft className=''/>Back to Home</button>
 
       </div>
         </div>
