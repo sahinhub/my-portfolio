@@ -4,6 +4,7 @@ import { BsStack } from 'react-icons/bs';
 import SkillTechSection from '../components/SkillTechSection';
 import { ThemeContext } from '../context/themeContext';
 import About from '../components/AboutComponent';
+import ServiceComponent from '../components/ServiceComponent';
 
 const Home = () => {
   const {isdark}=useContext(ThemeContext);
@@ -20,6 +21,7 @@ const Home = () => {
                 <SkillTechSection></SkillTechSection>
             </div>
             <About></About>
+            <ServiceComponent></ServiceComponent>
               
 
         </div>
