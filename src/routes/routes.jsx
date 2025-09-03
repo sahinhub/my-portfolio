@@ -6,6 +6,7 @@ import About from '../pages/AboutMe';
 import ContactPage from '../pages/ContactPage';
 import ProjectsPage from '../pages/ProjectsPage';
 import ErrorPage from '../pages/ErrorPage';
+import Service from '../pages/Service.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         {
             path:'/contact-me',
             element:<ContactPage></ContactPage>
+        },
+        {
+            path:'/services',
+            element:<Service></Service>
         },
         {
             path:'/projects',
