@@ -21,6 +21,7 @@ const Header = () => {
     const navlinks = [
         { path: '/', label: 'Home' },
         { path: '/about-me', label: 'About Me' },
+        { path: '/services', label: 'Services' },
         { path: '/projects', label: 'Projects' },
         { path: '/contact-me', label: 'Contact Me' },
     ];
@@ -37,7 +38,7 @@ const Header = () => {
 
                 {/* Desktop Menu */}
                 <div className="navbar-center hidden justify-center items-center text-center lg:flex flex-3/6 ">
-                    <ul className="menu-horizontal px-4 space-x-5 transition-all">
+                    <ul className="menu-horizontal px-4 space-x-10 transition-all">
                         {navlinks.map(link => (
                             <li key={link.path}>
                                 <NavLink
@@ -70,12 +71,12 @@ const Header = () => {
                     <div className="lg:hidden overflow-hidden">
                         <button
                             onClick={() => setOpen(!isOpen)}
-                            className="border border-[#b6b6b632] bg-transparent p-1 btn rounded-lg cursor-pointer "
+                            className="border border-[#b6b6b632] bg-transparent p-1 btn rounded-lg cursor-pointer transition-rotate duration-500 "
                         >
                             {/* Hamburger / Close Icons */}
                             {isOpen ? (
                                 <svg
-                                    className="fill-current"
+                                    className="fill-current transform rotate-180"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="30"
                                     height="30"
@@ -97,7 +98,7 @@ const Header = () => {
                         </button>
 
                         {/* Mobile Dropdown */}
-                        <div className={`z-10 top-14 right-0 w-full absolute h-[220px] transition-all ${isdark ? 'menuBGDark' : 'menuBGLight'} duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg p-2`}>
+                        <div className={`z-10 top-14 right-0 w-full absolute h-auto transition-all ${isdark ? 'menuBGDark' : 'menuBGLight'} duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 flex' : 'opacity-0 -translate-y-10 pointer-events-none'} py-2 rounded-lg p-2`}>
                             <ul className="space-x-3 space-y-2 w-full">
                                 {navlinks.map(link => (
                                     <li

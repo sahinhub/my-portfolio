@@ -159,8 +159,26 @@ background: conic-gradient( #7905a7, #7c65a1, #0e013dcb);
 .btnGradientDark {
   background: linear-gradient(157.33deg, var(--bg-color-2) 18.67%, var(--bg-color-4) 81.59%);
 }
+.btnAnimationAlt{
+      overflow: hidden;
+    --bg-color-1: rgba(124,101,161,0);
+    --bg-color-2: rgba(124,101,161,.38);
+    --bg-stop-1: 70%;
+    --bg-stop-2: 120%;
+    background: radial-gradient(5rem 60% at 100% 50%,#ffffff80,#292931 90%);
+    transition-duration: .45s;
+    transition-property: --bg-color-1,--bg-color-2,--bg-stop-1,--bg-stop-2;
+}
+.btnGradientDarkAlt{
+      background: #0e0918;
+    z-index: 1;
+}
 .btnBg{
   background: #000000;
+  color: white;
+}
+.btnBgAlt{
+  background: var(--bg-color-2);
   color: white;
 }
 
@@ -231,6 +249,7 @@ h3 {
   color: transparent;
 
 }
+
 .myName{
   background-image: linear-gradient(140deg,var(--bg-color-2),#7905a7);
    line-height: 70px;

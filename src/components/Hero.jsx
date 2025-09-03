@@ -43,7 +43,7 @@ const Hero = () => {
 
 
                         </h3>
-                        <p className="max-w-2xl">
+                        <p className={` max-w-2xl text-lg ${isdark?'text-gray-300':'text-gray-700'}`}>
                             Web Designer & Developer specializing in WordPress, now diving into Full Stack Web Development.
                         </p>
                         <div className={`${isdark&&'btnAnimation'} w-40 h-12 flex justify-center rounded-lg p-[1px]`}>
