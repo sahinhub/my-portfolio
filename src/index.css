@@ -249,6 +249,12 @@ h3 {
   color: transparent;
 
 }
+.textHighlight{
+  color: #0047d4;
+}
+[data-theme="dark"] .textHighlight{
+  color: #096fff;
+}
 
 .myName{
   background-image: linear-gradient(140deg,var(--bg-color-2),#7905a7);

@@ -3,7 +3,7 @@ import About from '../components/AboutComponent';
 
 const AboutMe = () => {
     return (
-        <div className='py-10'>
+        <div className='py-10 container mx-auto'>
             <h3 className='text-4xl text-center'>About Me</h3>
             <About></About>
         </div>

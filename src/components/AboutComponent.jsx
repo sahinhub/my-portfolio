@@ -50,23 +50,23 @@ const About = () => {
                     >
                     Since  2023, 
                     I've been working as a 
-                    <span className=" text-[#382BF1]"> Junior Web Developer </span> 
-                    at <span className=" text-[#382BF1]"><a href="https://wenextcoder.com/" target="blank_">We Next Coder Agency</a></span>, 
+                    <span className=" textHighlight"> Junior Web Developer </span> 
+                    at <span className=" textHighlight"><a href="https://wenextcoder.com/" target="blank_">We Next Coder Agency</a></span>, 
                     where I've honed my skills in creating 
                      exceptional digital experiences 
                     My journey began with 
                      WordPress development, 
                     where I mastered 
                    custom plugin development 
-                    and <span className=" text-[#382BF1]"> theme customization</span>.
+                    and <span className=" textHighlight"> theme customization</span>.
                     <br />
                     <br />
-                    With over <span className=" text-[#382BF1]">200+ successfully completed projects </span> 
+                    With over <span className=" textHighlight">200+ successfully completed projects </span> 
                     and a perfect client satisfaction rate, 
                     now I'm expanding my horizons into 
                      Full Stack Development, 
                     learning modern technologies like 
-                    <span className=" text-[#382BF1]"> React, Next.js, Express.js, and MongoDB</span>. 
+                    <span className=" textHighlight"> React, Next.js, Express.js, and MongoDB</span>. 
                     My goal is to become a 
                      versatile developer 
                     capable of building 
