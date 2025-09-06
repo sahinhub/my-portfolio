@@ -3,7 +3,7 @@ import ServiceComponent from '../components/ServiceComponent';
 
 const Service = () => {
     return (
-        <div>
+        <div className='py-10 container mx-auto'>
             <ServiceComponent></ServiceComponent>
         </div>
     );

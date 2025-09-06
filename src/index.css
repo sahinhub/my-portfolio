@@ -183,16 +183,18 @@ background: conic-gradient( #7905a7, #7c65a1, #0e013dcb);
 }
 
 /* 💎 Card Hover Effects */
-.skill-card {
+.skill-card,.service-card {
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
               box-shadow 0.5s ease;
+              
   will-change: transform, box-shadow;
 }
 
-.skill-card:hover {
-  transform: translateY(-10px) scale(1.02);
+.skill-card:hover,.service-card:hover {
+  transform: translateY(-4px) scale(1.01);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
 }
+
 .darkSkillTechBG {
   background: linear-gradient(157.33deg, var(--bg-color-2) 18.67%, var(--bg-color-4) 81.59%);
   padding: 4px ;
