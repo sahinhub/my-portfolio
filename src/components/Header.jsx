@@ -61,7 +61,7 @@ const Header = () => {
                     <div className={` hidden lg:block ${isdark && 'btnAnimation'} p-[1px] rounded-lg`}>
                         <button
                             onClick={handleNavigate}
-                            className={`${isdark ? 'btnGradientDark' : 'btnBg'}  px-6 py-2 rounded-md dark:text-primary cursor-pointer text-xl`}
+                            className={`${isdark ? 'btnGradientDark' : 'btnBg'}  px-6 py-2 rounded-lg dark:text-primary cursor-pointer text-xl`}
                         >
                             Lets talk
                         </button>
